@@ -238,7 +238,7 @@ function pickupShit()
 end
 
 function updateTarget()
-    while getgenv().autofarm do
+    while autofarmEnabled do
         if not currentTarget or (currentTarget and currentTarget:FindFirstChild("Humanoid") and currentTarget.Humanoid.Health <= 0) then
             wait()  
              if workspace.Mobs:FindFirstChild("[Lv. 75] Ice Illusion") then
