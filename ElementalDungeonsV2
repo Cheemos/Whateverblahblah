@@ -265,4 +265,13 @@ function updateTarget()
     end
 end
 
-task.spawn(updateTarget)
+function autofarmLoop()
+    while true do
+        if autofarmEnabled then
+            updateTarget()
+        end
+        wait(1) -- wait for a second before checking again
+    end
+end
+
+task.spawn(autofarmLoop)
