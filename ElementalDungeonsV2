@@ -35,12 +35,10 @@ TurnOffButton.TextSize = 14
 local autofarmEnabled = true
 
 TurnOnButton.MouseButton1Click:Connect(function()
-    getgenv().autofarm = true
     autofarmEnabled = true
 end)
 
 TurnOffButton.MouseButton1Click:Connect(function()
-    getgenv().autofarm = false
     autofarmEnabled = false
 end)
 
@@ -51,7 +49,7 @@ local args = {
 
 print(args[2])
 repeat task.wait() until game:IsLoaded()
-getgenv().autofarm = true
+autofarmEnabled = true
 
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
