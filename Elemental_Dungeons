@@ -5,6 +5,32 @@ local MainFrame = Instance.new("Frame")
 local TurnOnButton = Instance.new("TextButton")
 local TurnOffButton = Instance.new("TextButton")
 
+-- ... (Your existing code)
+
+-- Center the buttons within the MainFrame using AnchorPoint
+TurnOnButton.AnchorPoint = Vector2.new(0.5, 0.5)
+TurnOffButton.AnchorPoint = Vector2.new(0.5, 0.5)
+
+-- Position the buttons in the center of the MainFrame
+TurnOnButton.Position = UDim2.new(0.5, 0, 0.5, 0)
+TurnOffButton.Position = UDim2.new(0.5, 0, 0.5, 0)
+
+-- Apply styling to the buttons
+TurnOnButton.BackgroundColor3 = Color3.new(0, 1, 0)
+TurnOnButton.Size = UDim2.new(0, 100, 0, 40)
+TurnOnButton.Font = Enum.Font.SourceSansBold
+TurnOnButton.TextColor3 = Color3.new(1, 1, 1)
+TurnOnButton.TextSize = 18
+
+TurnOffButton.BackgroundColor3 = Color3.new(1, 0, 0)
+TurnOffButton.Size = UDim2.new(0, 100, 0, 40)
+TurnOffButton.Font = Enum.Font.SourceSansBold
+TurnOffButton.TextColor3 = Color3.new(1, 1, 1)
+TurnOffButton.TextSize = 18
+
+-- ... (Your existing code)
+
+
 GUI.Parent = game:GetService("Players").LocalPlayer.PlayerGui
 GUI.Name = "AutoFarmGUI"
 GUI.ResetOnSpawn = false
