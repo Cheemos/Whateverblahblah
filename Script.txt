@@ -11,6 +11,21 @@ GUI.Parent = game:GetService("Players").LocalPlayer.PlayerGui
 GUI.Name = "AutoFarmGUI"
 GUI.ResetOnSpawn = false
 
+local ToggleButton = Instance.new("TextButton") -- Add this to toggle visibility
+ToggleButton.Parent = GUI
+ToggleButton.BackgroundColor3 = Color3.new(1, 1, 1)
+ToggleButton.Position = UDim2.new(0, 10, 0, 10)
+ToggleButton.Size = UDim2.new(0, 100, 0, 30)
+ToggleButton.Text = "Open AutoFarm"
+ToggleButton.TextColor3 = Color3.new(0, 0, 0)
+ToggleButton.TextSize = 14
+
+MainFrame.Draggable = true -- This will make the frame draggable
+MainFrame.Visible = false  -- Initially hide the frame
+
+TurnOnButton.Position = UDim2.new(0.05, 0, 0.5, -15) -- Adjust position
+TurnOffButton.Position = UDim2.new(0.55, 0, 0.5, -15) -- Adjust position
+
 -- Main Frame
 MainFrame.Parent = GUI
 MainFrame.BackgroundColor3 = Color3.new(0, 0, 0)
@@ -69,6 +84,22 @@ ExpandButton.Size = UDim2.new(0.8, 0, 0.6, 0)
 ExpandButton.Text = "Open"
 ExpandButton.TextColor3 = Color3.new(0, 0, 0)
 ExpandButton.TextSize = 14
+
+ToggleButton.MouseButton1Click:Connect(function()
+    MainFrame.Visible = not MainFrame.Visible -- Toggle visibility of MainFrame
+end)
+
+TurnOnButton.MouseButton1Click:Connect(function()
+    getgenv().autofarm = true
+    autofarmEnabled = true
+    MainFrame.Visible = false -- Hide the frame when clicked
+end)
+
+TurnOffButton.MouseButton1Click:Connect(function()
+    getgenv().autofarm = false
+    autofarmEnabled = false
+    MainFrame.Visible = false -- Hide the frame when clicked
+end)
 
 ExpandButton.MouseButton1Click:Connect(showMainFrame)
 CloseButton.MouseButton1Click:Connect(function()
