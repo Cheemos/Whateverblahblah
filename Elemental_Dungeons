@@ -1,50 +1,36 @@
 wait(5)
 
--- ... (Your existing code before creating GUI)
-
 local GUI = Instance.new("ScreenGui")
 local MainFrame = Instance.new("Frame")
 local TurnOnButton = Instance.new("TextButton")
 local TurnOffButton = Instance.new("TextButton")
 
--- Set up the GUI
 GUI.Parent = game:GetService("Players").LocalPlayer.PlayerGui
 GUI.Name = "AutoFarmGUI"
 GUI.ResetOnSpawn = false
 
--- Set up the MainFrame
 MainFrame.Parent = GUI
 MainFrame.BackgroundColor3 = Color3.new(0, 0, 0)
 MainFrame.BorderColor3 = Color3.new(1, 0, 0)
 MainFrame.BorderSizePixel = 2
+MainFrame.Position = UDim2.new(0.5, -100, 0, 10)
 MainFrame.Size = UDim2.new(0, 200, 0, 60)
-MainFrame.Position = UDim2.new(0.5, -MainFrame.Size.X.Offset / 2, 0.5, -MainFrame.Size.Y.Offset / 2)
 
--- Create a function to style and center the buttons
-local function styleButton(button)
-    button.Size = UDim2.new(0, 80, 0, 40) -- Adjust button size if needed
-    button.Position = UDim2.new(0.1, 0, 0.5, -button.Size.Y.Offset / 2)
-    button.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
-    button.BorderSizePixel = 2
-    button.Font = Enum.Font.SourceSansBold
-    button.TextColor3 = Color3.new(1, 1, 1)
-    button.TextSize = 18
-end
-
--- Set up the Turn On button
 TurnOnButton.Parent = MainFrame
+TurnOnButton.BackgroundColor3 = Color3.new(0, 1, 0)
+TurnOnButton.Position = UDim2.new(0.1, 0, 0.5, -15)
+TurnOnButton.Size = UDim2.new(0, 80, 0, 30)
 TurnOnButton.Text = "Turn On"
-styleButton(TurnOnButton)
+TurnOnButton.TextColor3 = Color3.new(1, 1, 1)
+TurnOnButton.TextSize = 14
 
--- Set up the Turn Off button
 TurnOffButton.Parent = MainFrame
+TurnOffButton.BackgroundColor3 = Color3.new(1, 0, 0)
+TurnOffButton.Position = UDim2.new(0.6, 0, 0.5, -15)
+TurnOffButton.Size = UDim2.new(0, 80, 0, 30)
 TurnOffButton.Text = "Turn Off"
-styleButton(TurnOffButton)
-TurnOffButton.Position = UDim2.new(0.6, 0, 0.5, -TurnOffButton.Size.Y.Offset / 2) -- Adjust button position
-
--- The rest of your script...
-
-
+TurnOffButton.TextColor3 = Color3.new(1, 1, 1)
+TurnOffButton.TextSize = 14
 
 local autofarmEnabled = true
 
