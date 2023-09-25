@@ -22,8 +22,8 @@ MainFrame.Position = UDim2.new(0.5, -MainFrame.Size.X.Offset / 2, 0.5, -MainFram
 
 -- Create a function to style and center the buttons
 local function styleButton(button)
-    button.Size = UDim2.new(0, 120, 0, 40)
-    button.Position = UDim2.new(0.5, -button.Size.X.Offset / 2, 0.7, -button.Size.Y.Offset / 2)
+    button.Size = UDim2.new(0, 80, 0, 40) -- Adjust button size if needed
+    button.Position = UDim2.new(0.1, 0, 0.5, -button.Size.Y.Offset / 2)
     button.BackgroundColor3 = Color3.new(0.3, 0.3, 0.3)
     button.BorderSizePixel = 2
     button.Font = Enum.Font.SourceSansBold
@@ -40,8 +40,10 @@ styleButton(TurnOnButton)
 TurnOffButton.Parent = MainFrame
 TurnOffButton.Text = "Turn Off"
 styleButton(TurnOffButton)
+TurnOffButton.Position = UDim2.new(0.6, 0, 0.5, -TurnOffButton.Size.Y.Offset / 2) -- Adjust button position
 
 -- The rest of your script...
+
 
 
 local autofarmEnabled = true
