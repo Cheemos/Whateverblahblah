@@ -5,107 +5,32 @@ local MainFrame = Instance.new("Frame")
 local TurnOnButton = Instance.new("TextButton")
 local TurnOffButton = Instance.new("TextButton")
 
-local CloseButton = Instance.new("TextButton")
-
 GUI.Parent = game:GetService("Players").LocalPlayer.PlayerGui
 GUI.Name = "AutoFarmGUI"
 GUI.ResetOnSpawn = false
 
-local ToggleButton = Instance.new("TextButton") -- Add this to toggle visibility
-ToggleButton.Parent = GUI
-ToggleButton.BackgroundColor3 = Color3.new(1, 1, 1)
-ToggleButton.Position = UDim2.new(0, 10, 0, 10)
-ToggleButton.Size = UDim2.new(0, 100, 0, 30)
-ToggleButton.Text = "Open AutoFarm"
-ToggleButton.TextColor3 = Color3.new(0, 0, 0)
-ToggleButton.TextSize = 14
-
-MainFrame.Draggable = true -- This will make the frame draggable
-MainFrame.Visible = false  -- Initially hide the frame
-
-TurnOnButton.Position = UDim2.new(0.05, 0, 0.5, -15) -- Adjust position
-TurnOffButton.Position = UDim2.new(0.55, 0, 0.5, -15) -- Adjust position
-
--- Main Frame
 MainFrame.Parent = GUI
 MainFrame.BackgroundColor3 = Color3.new(0, 0, 0)
 MainFrame.BorderColor3 = Color3.new(1, 0, 0)
 MainFrame.BorderSizePixel = 2
-MainFrame.Position = UDim2.new(0.5, -100, 0, 10)
-MainFrame.Size = UDim2.new(0, 200, 0, 80)  -- Adjusted size to fit CloseButton
-MainFrame.Active = true  -- This property is necessary for the frame to be draggable
-MainFrame.Draggable = true  -- Making the frame draggable
+MainFrame.Size = UDim2.new(0, 200, 0, 60)
+MainFrame.Position = UDim2.new(0.5, -MainFrame.Size.X.Offset/2, 0.5, -MainFrame.Size.Y.Offset/2)
 
--- Close Button
-CloseButton.Parent = MainFrame
-CloseButton.BackgroundColor3 = Color3.new(1, 1, 1)
-CloseButton.Position = UDim2.new(0.85, 0, 0, 5)  -- Positioning to the top right corner of the main frame
-CloseButton.Size = UDim2.new(0, 25, 0, 25)  -- A smaller button
-CloseButton.Text = "X"
-CloseButton.TextColor3 = Color3.new(1, 0, 0)
-CloseButton.TextSize = 14
-
--- Turn On Button
 TurnOnButton.Parent = MainFrame
-TurnOnButton.Position = UDim2.new(0.1, 0, 0.4, -15)  -- Recentered
--- ... [Other properties remain unchanged]
+TurnOnButton.BackgroundColor3 = Color3.new(0, 1, 0)
+TurnOnButton.Position = UDim2.new(0.1, 0, 0.5, -15)
+TurnOnButton.Size = UDim2.new(0, 80, 0, 30)
+TurnOnButton.Text = "Turn On"
+TurnOnButton.TextColor3 = Color3.new(1, 1, 1)
+TurnOnButton.TextSize = 14
 
--- Turn Off Button
 TurnOffButton.Parent = MainFrame
-TurnOffButton.Position = UDim2.new(0.6, 0, 0.4, -15)  -- Recentered
--- ... [Other properties remain unchanged]
-
--- Functions to Show/Hide MainFrame
-local function showMainFrame()
-    MainFrame.Visible = true
-end
-
-local function hideMainFrame()
-    MainFrame.Visible = false
-end
-
--- Little Box to Expand GUI
-local LittleBox = Instance.new("Frame")
-LittleBox.Parent = GUI
-LittleBox.BackgroundColor3 = Color3.new(0, 0, 0)
-LittleBox.BorderColor3 = Color3.new(1, 0, 0)
-LittleBox.BorderSizePixel = 2
-LittleBox.Position = UDim2.new(0.5, -50, 0, 10)
-LittleBox.Size = UDim2.new(0, 100, 0, 50)
-LittleBox.Active = true
-LittleBox.Draggable = true
-LittleBox.Visible = false  -- It's hidden initially
-
-local ExpandButton = Instance.new("TextButton")
-ExpandButton.Parent = LittleBox
-ExpandButton.BackgroundColor3 = Color3.new(1, 1, 1)
-ExpandButton.Position = UDim2.new(0.1, 0, 0.2, 0)
-ExpandButton.Size = UDim2.new(0.8, 0, 0.6, 0)
-ExpandButton.Text = "Open"
-ExpandButton.TextColor3 = Color3.new(0, 0, 0)
-ExpandButton.TextSize = 14
-
-ToggleButton.MouseButton1Click:Connect(function()
-    MainFrame.Visible = not MainFrame.Visible -- Toggle visibility of MainFrame
-end)
-
-TurnOnButton.MouseButton1Click:Connect(function()
-    getgenv().autofarm = true
-    autofarmEnabled = true
-    MainFrame.Visible = false -- Hide the frame when clicked
-end)
-
-TurnOffButton.MouseButton1Click:Connect(function()
-    getgenv().autofarm = false
-    autofarmEnabled = false
-    MainFrame.Visible = false -- Hide the frame when clicked
-end)
-
-ExpandButton.MouseButton1Click:Connect(showMainFrame)
-CloseButton.MouseButton1Click:Connect(function()
-    hideMainFrame()
-    LittleBox.Visible = true
-end)
+TurnOffButton.BackgroundColor3 = Color3.new(1, 0, 0)
+TurnOffButton.Position = UDim2.new(0.6, 0, 0.5, -15)
+TurnOffButton.Size = UDim2.new(0, 80, 0, 30)
+TurnOffButton.Text = "Turn Off"
+TurnOffButton.TextColor3 = Color3.new(1, 1, 1)
+TurnOffButton.TextSize = 14
 
 local autofarmEnabled = true
 
