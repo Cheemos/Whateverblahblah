@@ -26,7 +26,7 @@ TurnOnButton.TextSize = 14
 
 TurnOffButton.Parent = MainFrame
 TurnOffButton.BackgroundColor3 = Color3.new(1, 0, 0)
-TurnOffButton.Position = UDim2.new(0.6, 0, 0.5, -15)
+TurnOffButton.Position = UDim2.new(0.5, 10, 0.5, -15)
 TurnOffButton.Size = UDim2.new(0, 80, 0, 30)
 TurnOffButton.Text = "Turn Off"
 TurnOffButton.TextColor3 = Color3.new(1, 1, 1)
