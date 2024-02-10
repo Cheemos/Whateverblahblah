@@ -2,6 +2,8 @@
 -- Version Check
 
 
+    })
+    else
     
 -- Anti AFK
     for i,v in pairs(getconnections(game.Players.LocalPlayer.Idled)) do
