@@ -1,0 +1,21 @@
+_G.Toggle = true
+ 
+for _, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+	x = string.split(v.Name, " ")
+	if x[2] ~= nil then
+		v.Name = x[1]..x[2]
+	end
+end
+ 
+while _G.Toggle == true do
+	task.wait()
+	game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-1276, 696, -190)
+	for _, v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+		local ohString1 = game.Players.LocalPlayer["MAIN_DATA"].Slots[game.Players.LocalPlayer["MAIN_DATA"].Slot.Value].Value
+		local ohString2 = v.Name
+		local ohTable3 = {}
+ 
+		game:GetService("ReplicatedStorage").Replicator:InvokeServer(ohString1, ohString2, ohTable3)
+		print(ohString1)
+	end
+end
