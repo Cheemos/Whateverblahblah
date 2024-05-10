@@ -2,8 +2,8 @@
 getgenv().Get = setmetatable({}, {__index = function(Self, Idx) return game:GetService(Idx) end})
 
 getgenv().Toggles = {
-    Farm = true,
-    KillAura = true,
+    Farm = false,
+    KillAura = false,
     MobAura = false,
     AutoRoll = false,
     Store = false,
