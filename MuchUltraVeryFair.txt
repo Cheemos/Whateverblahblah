@@ -188,6 +188,7 @@ end
 
 
 
+
 local function check(e)
     local script = game:GetService("Players").LocalPlayer.PlayerGui.MainClient.LocalScript
     if getfenv(e) and getfenv(e).script and getfenv(e).script.Name and getfenv(e).script == script then
