@@ -105,7 +105,8 @@ local dropdownOptions = {
         "Dummy2", "Dummy", "Frost Slime", "Frost Goblin", "Wheat Slime", 
         "Wolfen Footman", "Frost Warrior", "Sand Slime", "Elder Frost Slime", "Electro Raptor", 
         "Tundra Wolf", "Tundra Golem", "Frost Wizard", "Sand Knight", "Sand Warrior", 
-        "Sand Turtling", "Shira General", "Sand Wizard", "Frost Lord", "Sand Snake", "Sand Scorpion"
+        "Sand Turtling", "Shira General", "Sand Wizard", "Frost Lord", "Sand Snake", "Sand Scorpion", "Electro Raptor", "Valley Angel", "Valley Knight",
+        "Fire Bird", "Valley Guardian",
     },
     Callback = function(selectedValue)
         local replicatedStorage = game:GetService("ReplicatedStorage")
